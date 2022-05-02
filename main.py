@@ -1,10 +1,25 @@
 #####################################
-#Algoritmo Genetico Modificado#
-#EP 1 - Inteligencia Artificial#
+#Algoritmo Genetico Modificado      #
+#EP 1 - Inteligencia Artificial     #
+#Matheus Amorim                     #
+#Vinícius Brito nUSP10783198        #
+#####################################
+
+#bibliotecas
+import funcoes
 
 #Definicao de parametros
+tamPop = 500 #tamanho da populacao
+pc = 0.8 #probabilidade de crossover
+pm = 0.2 #probabilidade de mutacao
+nGera = 2000 #numero de geracoes
+nBits = 64 #numero de bits para cada variavel
+nVar = 2 #numero de variaveis
+gera = 0 #contador de geracoes
+func = 1 #determina a funcao
 
 #Gera a Populacao Inicial
+pop = pop_inicial(tamPop,nBits,nVar)
 
 #Calcula o Fitness
 

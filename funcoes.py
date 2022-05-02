@@ -20,7 +20,9 @@
 #Funcao Tradutora Real para Binario#
 
 #Funcao Gera Populacao Inicial#
+pop_inicial(
 
+)
 #Funcao Calcula Fitness#
 
 #Funcao Calcula Melhor Individuo#
