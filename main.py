@@ -11,7 +11,7 @@
 #Calcula Melhor Individuo
 
 #Calcula Media dos individuos
-
+#
 #Execução do AGM#
 
 #while gera=<Ngera
