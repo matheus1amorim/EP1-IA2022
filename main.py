@@ -25,7 +25,9 @@ media = 0 #media
 pop = f.pop_inicial(tamPop,nBits,nVar)
 
 #Calcula o Fitness
-fit = f.calc_fitness(pop)
+fit = f.calc_fitness(pop,func)
+if not fit:
+    exit()
 
 #Calcula Estatisticas: Melhor Individuo e Media dos individuos
 [mInd, media] = f.calc_estatisticas(fit)
