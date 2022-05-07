@@ -35,18 +35,46 @@ def fSumS(x):
     return y
 
 #Funcao DeJong#
-def fDeJong():
-    y = 0
+def fDeJong(x):
+    [x1, x2] = fSplit(x)
+    x1 = binToReal(x1)
+    x2 = binToReal(x2)
+    y = 100*m.sqrt(m.sqrt(x1)-m.sqrt(x2))+m.sqrt(1-m.sqrt(x1))
     return y
 
 #Funcao Ackley#
-def fAckley():
-    y = 0
+def fAckley(x):
+    [x1, x2] = fSplit(x)
+    x1 = binToReal(x1)
+    x2 = binToReal(x2)
+    n=2
+    a=20
+    b=0.2
+    c=2*m.pi
+    s1=0
+    s2=0
+    i=1
+    for i in range(n):
+        if i == 1:
+            s1 = s1 + m.sqrt(x1)
+            s2 = s2 + m.cos(c*x1)
+        else:
+            s1 = s1 + m.sqrt(x2)
+            s2 = s2 + m.cos(c * x2)
+
+    y = -a * m.exp(-b*m.sqrt(1/(n*s1)))-m.exp(1/(n*s2))+a+m.exp(1)
     return y
 
 #Funcao Bump#
-def fBump():
-    y = 0
+def fBump(x):
+    [x1, x2] = fSplit(x)
+    x1 = binToReal(x1)
+    x2 = binToReal(x2)
+    #Conversar com professor sobre IF e ELSE IF
+    temp0=m.pow(m.cos(x1),4)+m.pow(m.cos(x2),4)
+    temp1=2*m.sqrt(m.cos(x1))*m.sqrt(m.cos(x2))
+    temp2=m.sqrt(m.sqrt(x1))+2*m.sqrt(x2)
+    y=-m.fabs((temp0-temp1)/temp2)
     return y
 
 #Funcao Rastringin#
@@ -56,7 +84,7 @@ def fRastringin(x):
     x2 = binToReal(x2)
     y = m.sqrt(x1) + m.sqrt(x2) - 10 * m.cos(2 * m.pi * x1) - 10 * m.cos(2 * m.pi * x2) + 10
     y = -y
-    return
+    return y
 
 #Funcao Tradutora Binario para Real#
 def binToReal(pop):
