@@ -20,6 +20,8 @@ gera = 0 #contador de geracoes
 func = 1 #determina a funcao
 mInd = "" #melhor individuo
 media = 0 #media
+xmin = 0 #x minimo
+xmax = 0 #x maximo
 
 #Gera a Populacao Inicial
 pop = f.pop_inicial(tamPop,nBits,nVar)
@@ -48,7 +50,7 @@ if not fit:
 #[fmelhor,fmed]= f.calc_estatisticas(fit)
 
 #Gerar Saidas TXT E Graficos#
-status = gt.txtPop(pop)
-status = gt.graphs(pop)
+#status = gt.txtPop(pop)
+#status = gt.graphs(pop)
 
 ###<<<Fim do Documento>>>###

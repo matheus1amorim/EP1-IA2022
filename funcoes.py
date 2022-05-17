@@ -7,6 +7,7 @@
 #bibliotecas
 import math as m
 from itertools import count as c
+import graphsandtxts as gt
 
 #Funcao Gold#
 def fGold(x):
@@ -87,20 +88,33 @@ def fRastringin(x):
     return y
 
 #Funcao Tradutora Binario para Real#
-def binToReal(pop):
-    pop = True
-    return pop
+def binToReal(pop, xmin, xmax,nbits):
+    lista = gt.readTxtPop(pop)
+    n = nbits - 1
+    #n entendi essa do bit mais significativo
+    for i in range(0, len(lista)):
+        lista[i] = sum(lista[i], (m.pow(2, n))) #valor de x na base 10
+        lista[i] = xmin+lista[i]*((xmax-xmin)/m.pow(2, n)) #mapeamento de x para o intervalo [xmin, xmax]
+    return lista
 
 #Funcao Tradutora Real para Binario#
 def realToBin(pop):
-    pop = True
-    return pop
+    #entrada única
+    #pop = format(pop, "b")
+####################################
+    #recebe lista de valores reais e retorna lista de valores binarios
+    lista = gt.readTxtPop(pop)
+    #verificar como passar do intervalo de volta para binário
+    #loop que passa os valores da lista de reais para binário
+    for i in range(0, len(lista)):
+        lista[i] = format(lista[i], "b")
+    return lista
 
 #Funcao de divisao de string representativa de numero binario
 def fSplit(x):
     bound = c.count(x)
     hBound = bound/2
-    x1 = x[0:hBound]
+    x1 = x[1:hBound]
     x2 = x[(hBound+1):bound]
     return [x1,x2]
 
